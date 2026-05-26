@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CP_TOPO
 {
-    class NoteService
+    public class NoteService
     {
         private ConnectionDB _db = new ConnectionDB();
         public int AddNote(string text)

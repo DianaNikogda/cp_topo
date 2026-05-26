@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CP_TOPO
 {
-    class FileService
+   public class FileService
     {
         private HashService hashService = new HashService();
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CP_TOPO
 {
-    class ConnectionDB
+    public class ConnectionDB
     {
         private string _connectionString = "Host=localhost;Port=5432;Username=postgres;Password=diana21bir;Database=topo";
 

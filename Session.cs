@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CP_TOPO
 {
-    class Session
+    public class Session
     {
         public static User CurrentUser { get; set; }
     }

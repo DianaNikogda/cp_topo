@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CP_TOPO
 {
-    class HashService
+    public class HashService
     {
         public string GetMD5(string input)
         {

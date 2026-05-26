@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CP_TOPO
 {
-    class UpdateService
+   public class UpdateService
     {
         private FileService _fileService =new FileService();
         private string clientVersion = @"C:\Users\Диана\source\repos\TOPO\CP_TOPO\VersionInfo.cs";

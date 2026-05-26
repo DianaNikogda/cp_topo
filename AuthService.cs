@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CP_TOPO
 {
-     class AuthService
+     public class AuthService
     {
         private ConnectionDB _db = new ConnectionDB();
         HashService _hashService = new HashService();
