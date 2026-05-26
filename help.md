@@ -2,57 +2,54 @@
 
 ## Аутентификация
 
-- **login <username> <password>**  
+- login <username> <password>  
   Вход в систему
 
-- **logout**  
+- logout  
   Выход из системы
 
-- **authUser <username> <password>**  
+- authUser <username> <password>  
   Создание нового пользователя (только администратор)
 
 ---
 
 ## Работа с заметками
 
-- **addNewNote "текст"**  
+- addNewNote "текст"  
   Создание новой заметки
 
-- **listNotes**  
+- listNotes  
   Получение списка заметок
 
-- **getNote <id>**  
+- getNote <id>  
   Просмотр заметки по идентификатору
 
-- **delNote <id>**  
+- delNote <id>  
   Удаление заметки
 
-- **updateNote <id> "новый текст"**  
+- updateNote <id> "новый текст"  
   Обновление текста заметки
 
 ---
 
 ## Обновление системы
 
-- **checkForUpdates**  
+- checkForUpdates  
   Проверка наличия обновлений приложения
 
-- **updateAll**  
+- updateAll  
   Обновление приложения до последней версии
 
 ---
 
 ## Мониторинг системы
 
-- **getSystemStats**  
-  Получение информации о загрузке CPU, RAM и диска
-
-- **getLogs**  
+- getLogs  
   Получение журналов безопасности системы
 
 ---
 
 ## Прочее
 
-- **help**  
+- help  
   Вывод данной инструкции
