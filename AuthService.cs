@@ -55,11 +55,11 @@ namespace CP_TOPO
 
         public void Register(string username, string password)
         {
-            if (Session.CurrentUser == null || Session.CurrentUser.Role != "Admin")
-            {
-                Console.WriteLine("Доступ запрещен");
-                return;
-            }
+            //if (Session.CurrentUser == null || Session.CurrentUser.Role != "Admin")
+            //{
+            //    Console.WriteLine("Доступ запрещен");
+            //    return;
+            //}
 
             using (var conn = _db.GetConnection())
             {

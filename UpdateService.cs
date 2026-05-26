@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -9,50 +10,50 @@ namespace CP_TOPO
 {
     class UpdateService
     {
-        private FileService _fileService = new FileService();
-
-        private string destinationFile = @"C:\Users\Диана\source\repos\TOPO\Destination\file1.txt";
-        private string targetFile = @"C:\Users\Диана\source\repos\TOPO\Target\file1.txt";
+        private FileService _fileService =new FileService();
+        private string clientVersion = @"C:\Users\Диана\source\repos\TOPO\CP_TOPO\VersionInfo.cs";
+        private string serverVersion = @"C:\Users\Диана\source\repos\TOPO\CP_TOPO\Updater\VersionInfo.cs";
 
         public bool CheckForUpdates()
         {
-            if (!File.Exists(destinationFile) || !File.Exists(targetFile))
-            {
-                Console.WriteLine("Один из файлов не найден");
-                return false;
-            }
-
-            bool isEqual = _fileService.IsEqual(destinationFile, targetFile);
-
+            bool isEqual =_fileService.IsEqual(clientVersion, serverVersion);
             if (isEqual)
             {
-                Console.WriteLine("Файлы совпадают. Обновление не требуется.");
+                Console.WriteLine("Обновление не требуется");
                 return false;
             }
-            else
-            {
-                Console.WriteLine("Доступно обновление");
-                return true;
-            }
+            Console.WriteLine("Обнаружена новая версия");
+            return true;
         }
-
-        public void UpdateAll()
+        public void ApplyUpdate()
         {
-            if (!File.Exists(destinationFile) || !File.Exists(targetFile))
+            string updater = @"C:\Users\Диана\source\repos\TOPO\CP_TOPO\Updater\Updater\bin\Debug\Updater.exe";
+            if (!File.Exists(updater))
             {
-                Console.WriteLine("Один из файлов не найден");
+                Console.WriteLine("Установщик обновлений не найден");
                 return;
             }
-
-            if (_fileService.IsEqual(destinationFile, targetFile))
-            {
-                Console.WriteLine("Уже актуальная версия");
-            }
-            else
-            {
-                Console.WriteLine("Обновление...");
-                _fileService.UpdateFile(targetFile, destinationFile);
-            }
+            Console.WriteLine("Запуск обновления...");
+            Process.Start(updater);
+            Environment.Exit(0);
         }
+        //public void UpdateAll()
+        //{
+        //    if (!File.Exists(destinationFile) || !File.Exists(targetFile))
+        //    {
+        //        Console.WriteLine("Один из файлов не найден");
+        //        return;
+        //    }
+
+        //    if (_fileService.IsEqual(destinationFile, targetFile))
+        //    {
+        //        Console.WriteLine("Уже актуальная версия");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Обновление...");
+        //        _fileService.UpdateFile(targetFile, destinationFile);
+        //    }
+        //}
     }
 }

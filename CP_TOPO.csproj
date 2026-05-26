@@ -98,6 +98,7 @@
     <Compile Include="ConnectionDB.cs" />
     <Compile Include="FileService.cs" />
     <Compile Include="HashService.cs" />
+    <Compile Include="LogService.cs" />
     <Compile Include="NoteService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,6 +106,7 @@
     <Compile Include="SystemService.cs" />
     <Compile Include="UpdateService.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="VersionInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
